@@ -1,0 +1,154 @@
+{
+  "project_info": {
+    "project_number": "716176704422",
+    "project_id": "mimar-2023",
+    "storage_bucket": "mimar-2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716176704422:android:dfcb607d33fdc2bdcac567",
+        "android_client_info": {
+          "package_name": "com.trianglz.mimar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3GkcLxijhbYYgVukICKxC0vefk9F5LSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716176704422-1o230hunead2n34b3ts5v0hjgv259e1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Trianglz.Mimar.Customer.Dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716176704422:android:aaf40358b99f3418cac567",
+        "android_client_info": {
+          "package_name": "com.trianglz.mimar.demo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3GkcLxijhbYYgVukICKxC0vefk9F5LSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716176704422-1o230hunead2n34b3ts5v0hjgv259e1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Trianglz.Mimar.Customer.Dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716176704422:android:c1e0d92468378766cac567",
+        "android_client_info": {
+          "package_name": "com.trianglz.mimar.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3GkcLxijhbYYgVukICKxC0vefk9F5LSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716176704422-1o230hunead2n34b3ts5v0hjgv259e1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Trianglz.Mimar.Customer.Dev"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716176704422:android:bf7491a31bda59adcac567",
+        "android_client_info": {
+          "package_name": "com.trianglz.mimar.stg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3GkcLxijhbYYgVukICKxC0vefk9F5LSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716176704422-132lvg77n8n6v2gg0fdctairiku4v0q6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "716176704422-1o230hunead2n34b3ts5v0hjgv259e1q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Trianglz.Mimar.Customer.Dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

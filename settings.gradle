@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://pkgs.dev.azure.com/androidtriangz/_packaging/androidtriangz/maven/v1'
+            credentials { username authToken }
+            name 'androidtriangz'
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+        maven {
+            url 'https://jitpack.io'
+        }
+    }
+}
+rootProject.name = "Mimar_Android"
+include ':app'

@@ -1,0 +1,119 @@
+version: 2.1
+orbs:
+#  firebase-deploy: azdevs/firebase-deploy@1.0.0
+  slack: circleci/slack@4.8.3
+
+jobs:
+  build_deploy_beta:
+    working_directory: ~/mimar_android
+    docker:
+      - image: circleci/android:api-29
+
+
+    environment:
+      JVM_OPTS: -Xmx3200m
+      FASTLANE_LANE: stg
+
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Chmod permissions
+          command: sudo chmod +x gradlew
+      - restore_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+      - run: gem install bundler -v 2.1.4
+      - run: bundle check || bundle install --path vendor/bundle
+      - save_cache:
+          key: 1-gems-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - run:
+          name: test
+          command: ruby -v
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: firebase Download
+          command: curl -sL https://firebase.tools | bash
+      - run:
+          name: fastlane
+          command: bundle exec fastlane $FASTLANE_LANE
+      # - slack/notify:
+      #     event: fail
+      #     mentions: '<@U3E5LES31>'
+      #     template: basic_fail_1
+      # - slack/notify:
+      #     event: pass
+      #     template: success_tagged_deploy_1
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+      - store_test_results:
+          path: app/build/test-results
+
+  # build_deploy_prod:
+  #   working_directory: ~/mimar_android
+  #   docker:
+  #     - image: circleci/android:api-29
+
+
+  #   environment:
+  #     JVM_OPTS: -Xmx3200m
+  #     FASTLANE_LANE: prod
+
+  #   steps:
+  #     - checkout
+  #     - restore_cache:
+  #         key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+  #     - run:
+  #         name: Chmod permissions
+  #         command: sudo chmod +x gradlew
+  #     - restore_cache:
+  #         key: 1-gems-{{ checksum "Gemfile.lock" }}
+  #     - run: gem install bundler -v 2.1.4
+  #     - run: bundle check || bundle install --path vendor/bundle
+  #     - save_cache:
+  #         key: 1-gems-{{ checksum "Gemfile.lock" }}
+  #         paths:
+  #           - vendor/bundle
+  #     - run:
+  #         name: Download Dependencies
+  #         command: ./gradlew androidDependencies
+  #     - run:
+  #         name: test
+  #         command: ruby -v
+  #     - save_cache:
+  #         paths:
+  #           - ~/.gradle
+  #         key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
+  #     - run:
+  #         name: firebase Download
+  #         command: curl -sL https://firebase.tools | bash
+  #     - run:
+  #         name: fastlane
+  #         command: bundle exec fastlane $FASTLANE_LANE
+  #     - store_artifacts:
+  #         path: app/build/reports
+  #         destination: reports
+  #     - store_test_results:
+  #         path: app/build/test-results
+
+workflows:
+  version: 2
+  build-and-deploy-firebase:
+    jobs:
+      - build_deploy_beta:
+          filters:
+            branches:
+              only: stg
+      # - build_deploy_prod:
+      #     filters:
+      #       branches:
+      #         only: production

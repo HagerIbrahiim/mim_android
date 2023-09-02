@@ -1,0 +1,5 @@
+Password : TrianglZ
+Alias: MimarKeyAlias
+Cert: Trianglz, Trianglz, Trianglz, Alex, Alex, Alex
+
+

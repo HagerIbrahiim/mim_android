@@ -1,0 +1,52 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+desc "Deploy a new version to the firebase"
+lane :stg do
+# ...
+# icon_banner(label: 'QA', backup: false)
+gradle(
+  task: 'assemble',
+  flavor:'stg',
+  build_type: 'Release'
+)
+
+firebase_app_distribution(
+  app: "1:716176704422:android:bf7491a31bda59adcac567",
+  groups: "qa_group",
+  release_notes_file: "release-notes.txt",
+  firebase_cli_token: "1//03Dc1fsrcnjwCCgYIARAAGAMSNwF-L9Irkeaq0qhVICfw_lpppvlY8N-QzQCg3-2lzA7wxN0mcZDop-4GEglkm8kKLychrHWUgpw"
+)
+
+end
+# ...
+desc "Deploy a new version to the firebase"
+lane :prod do
+# ...
+# icon_banner(label: 'QA', backup: false)
+gradle(
+  task: 'assemble',
+  flavor:'prod',
+  build_type: 'Release'
+)
+
+firebase_app_distribution(
+  app: "1:784585361628:android:a609893fe82b1ec8a34c19",
+  groups: "android_test",
+  release_notes_file: "release-notes.txt",
+  firebase_cli_token: "1//0325qaTva-nXtCgYIARAAGAMSNwF-L9IrMV-rPSwNEoO4ZZ_UAs5Mj2HLLcb0lMfRs7ZYIX-xXRx40QL3XWl-RJLOHrQjTzR5s30"
+)
+# ...
+end

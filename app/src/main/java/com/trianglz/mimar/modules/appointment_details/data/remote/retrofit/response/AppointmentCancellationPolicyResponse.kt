@@ -1,0 +1,11 @@
+package com.trianglz.mimar.modules.appointment_details.data.remote.retrofit.response
+
+import androidx.annotation.Keep
+import com.squareup.moshi.Json
+import com.trianglz.core.data.network.models.SuccessMessageResponse
+
+@Keep
+data class AppointmentCancellationPolicyResponse (
+    @Json(name = "cancellation_policy_message")
+    val policy: String? = null
+): SuccessMessageResponse()

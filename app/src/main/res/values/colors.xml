@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#3F4752</color>
+    <color name="primaryColorPressed">#4D5663</color>
+    <color name="onPrimary">#3F4752</color>
+    <color name="colorAccent">#3F4752</color>
+    <color name="checkout_color_accent">#3F4752</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>

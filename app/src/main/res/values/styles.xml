@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="android:windowIsFloating">false</item>
+
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/curved_solid_top_corners_20</item>
+    </style>
+
+    <!--  alert dialog theme-->
+    <style name="Theme.Material.Dialog" parent="@style/Theme.MaterialComponents.Light.Dialog">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTitleStyle">@style/MyTitle_MaterialAlertDialog.MaterialComponents.Title.Text</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/BodyTextAppearance.MaterialComponents.Body2</item>
+    </style>
+    <style name="BodyTextAppearance.MaterialComponents.Body2" parent="@style/TextAppearance.MaterialComponents.Body2">
+        <item name="android:textSize">16sp</item>
+        <!--        <item name="fontFamily">@font/regular</item>-->
+        <item name="android:textColor">@color/primaryColor</item>
+    </style>
+
+    <style name="MyTitle_MaterialAlertDialog.MaterialComponents.Title.Text" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="android:textSize">22sp</item>
+        <!--        <item name="fontFamily">@font/bold</item>-->
+    </style>
+
+
+    <!-- end alert dialog theme-->
+
+
+    <style name="DatePicker" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <!-- just override the colors used in the default style -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorAccent">@color/primaryColor</item>
+    </style>
+
+    <style name="MimarHyperPayTheme" parent="Theme.Checkout.Light">
+        <!-- Customize the primary color -->
+        <item name="colorAccent">@color/primaryColor</item>
+        <item name="headerBackground">@color/primaryColor</item>
+        <item name="checkoutButtonStyle">@style/MimarHyperPayButtonTheme</item>
+
+    </style>
+
+    <style name="MimarHyperPayButtonTheme" parent="@style/Checkout.Button">
+        <!-- Customize the primary color -->
+        <item name="android:background">@color/primaryColor</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+</resources>
+
